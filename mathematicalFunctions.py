@@ -14,3 +14,21 @@ def geomean(x):
         y = y * x[i]
     y = y**(1/len(x))
     return y
+
+def arraymax(x):
+    y = x[0]
+    for i in range(len(x)):
+        if y>=x[i]:
+            continue
+        else:
+            y = x[i]
+    return y
+
+def arraymin(x):
+    y = x[0]
+    for i in range(len(x)):
+        if y<=x[i]:
+            continue
+        else:
+            y = x[i]
+    return y
