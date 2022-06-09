@@ -52,11 +52,3 @@ class model:
         self.R_square = self.ess_val/self.tss_val
         
     
-
-
-
-
-
-
-
-
