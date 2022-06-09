@@ -1,19 +1,4 @@
-def total(x):
-    y = 0    
-    for i in range(len(x)):
-        y = y + x[i]     
-    return y
-
-def mean(x):
-    y = total(x)/len(x)
-    return y
-
-def geomean(x):
-    y = 1    
-    for i in range(len(x)):
-        y = y * x[i]
-    y = y**(1/len(x))
-    return y
+import mathematicalFunctions as mf
 
 class model:  
     def __init__(self):
@@ -28,8 +13,8 @@ class model:
         self.__x = x
         self.__y = y
         self.__y_predicts = []
-        self.__x_mean = mean(x)
-        self.__y_mean = mean(y)
+        self.__x_mean = mf.mean(x)
+        self.__y_mean = mf.mean(y)
         self.b1_parameter()
         self.b0_parameter()
         self.leastsquares_predict()
@@ -60,8 +45,8 @@ class model:
         self.rss_val = 0
         for i in range(len(self.y)):
             print(i)
-            self.tss_val = self.tss_val + (self.y[i]-mean(self.y))**2
-            self.ess_val = self.ess_val + (self.y_predicts[i]-mean(self.y))**2
+            self.tss_val = self.tss_val + (self.y[i]-mf.mean(self.y))**2
+            self.ess_val = self.ess_val + (self.y_predicts[i]-mf.mean(self.y))**2
             self.rss_val = self.rss_val + (self.y[i]-self.y_predicts[i])**2
             
         self.R_square = self.ess_val/self.tss_val
