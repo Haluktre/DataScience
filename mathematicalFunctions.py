@@ -32,3 +32,15 @@ def arraymin(x):
         else:
             y = x[i]
     return y
+
+def identitymatrix(x):
+    matrix = []
+    for i in range(x):
+        list_a = []
+        for j in range(x):
+            if(i==j): 
+                list_a.append(1)
+            else:
+                list_a.append(0)
+        matrix.append(list_a)
+    return matrix
