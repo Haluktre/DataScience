@@ -164,7 +164,6 @@ class MultiLinearRegression:   #multiple linear regression takes one dependent v
                 total += data_x[i+1][j]*self.weights[i+1]
                 
             total += self.weights[0]
-            
             y_predicts.append(total)
         
         return y_predicts
