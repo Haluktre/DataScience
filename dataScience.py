@@ -88,12 +88,10 @@ class MultiLinearRegression:   #multiple linear regression takes one dependent v
         if(type(x)!=list):         
             for i in y.columns:
                Y = y[i].tolist()
-                         
             for i in x.columns:
                 X.append(x[i].tolist())             
             row = len(Y)
             column = len(X)
-               
         elif(type(x)==list):         
             column = len(x)
             row = len(y)
@@ -101,8 +99,7 @@ class MultiLinearRegression:   #multiple linear regression takes one dependent v
             X = x
 
         for i in range(row):
-            ones.append(1)
-        
+            ones.append(1)      
         X.insert(0,ones)
 
         return X,Y,row,column
