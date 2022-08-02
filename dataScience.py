@@ -1,5 +1,7 @@
 import mathematicalFunctions as mf
 
+
+
 class SimpleLinearRegression:   #simple linear regression. Works with 1 independent variable and 1 dependent variable
     def __init__(self):
         self.b0 = None  #coefficient of function
@@ -11,6 +13,8 @@ class SimpleLinearRegression:   #simple linear regression. Works with 1 independ
         
     
     def fit(self,x,y): #Executes functions necessary for calculation. takes dependent and independent variables as parameters
+        
+        x,y = self.__data_convert(x, y)
         x_mean = mf.mean(x)
         y_mean = mf.mean(y)
         self.__b1_parameter(x,y,x_mean,y_mean)
@@ -19,6 +23,23 @@ class SimpleLinearRegression:   #simple linear regression. Works with 1 independ
         self.__tss_ess_rss_rsquare(y,y_mean,y_predicts)
         print("Finished fit!")
         
+        
+    def __data_convert(self,x,y):  #converts data into format suitable for calculation
+        X = []
+        Y = []
+        
+        if(type(x)!=list):     
+            y = y.squeeze()
+            x = x.squeeze()
+            Y = y.tolist()
+            X = x.tolist()
+
+        elif(type(x)==list):         
+            Y = y
+            X = x
+
+        return X,Y
+    
         
     def __b0_parameter(self,x_mean,y_mean): #Calculates the first coefficient value
         self.b0 = y_mean - self.b1*x_mean
@@ -46,11 +67,10 @@ class SimpleLinearRegression:   #simple linear regression. Works with 1 independ
         self.ess_val = 0
         self.rss_val = 0
         for i in range(len(y)):
-            print("Step:",i)
             self.tss_val = self.tss_val + (y[i]-y_mean)**2
             self.ess_val = self.ess_val + (y_predicts[i]-y_mean)**2
             self.rss_val = self.rss_val + (y[i]-y_predicts[i])**2
-        print("Finished fit!") 
+            
         self.R_square = self.ess_val/self.tss_val
         
         
@@ -85,9 +105,10 @@ class MultiLinearRegression:   #multiple linear regression takes one dependent v
         Y = []
         ones = []
         
-        if(type(x)!=list):         
-            for i in y.columns:
-               Y = y[i].tolist()
+        if(type(x)!=list):     
+            y = y.squeeze()
+            x = x.squeeze()
+            Y = y.tolist()
             for i in x.columns:
                 X.append(x[i].tolist())             
             row = len(Y)
