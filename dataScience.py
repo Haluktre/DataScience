@@ -210,3 +210,38 @@ class MultiLinearRegression:   #multiple linear regression takes one dependent v
         total += self.weights[0]
 
         return total
+    
+    
+def standard_deviation(dataset):
+    if(type(dataset)!=list):
+        dataset = dataset.tolist()
+    total = 0
+
+    for i in dataset:
+        total = total + (i - mf.mean(dataset))**2
+
+    standard_dv = (total/(len(dataset)))**(1/2)
+    
+    return standard_dv
+
+    
+def z_score(dataset,x_value,standard_deviation):
+    if(type(dataset)!=list):
+        dataset = dataset.tolist()
+        
+    Z_score = (x_value - mf.mean(dataset)) / standard_deviation
+    
+    return Z_score
+
+
+def variance(dataset):
+    if(type(dataset)!=list):
+        dataset = dataset.tolist()
+    total = 0
+    
+    for i in dataset:
+        total = total + (i - mf.mean(dataset))**2
+
+    Variance = (total/(len(dataset)))
+    
+    return Variance
