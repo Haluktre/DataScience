@@ -220,7 +220,7 @@ def standard_deviation(dataset):
     for i in dataset:
         total = total + (i - mf.mean(dataset))**2
 
-    standard_dv = (total/(len(dataset)))**(1/2)
+    standard_dv = (total/(len(dataset)-1))**(1/2)
     
     return standard_dv
 
