@@ -81,7 +81,7 @@ class SimpleLinearRegression:   #simple linear regression. Works with 1 independ
         
      
     
-class MultiLinearRegression:   #multiple linear regression takes one dependent variable and more than one independent variable
+class MultipleLinearRegression:   #multiple linear regression takes one dependent variable and more than one independent variable
     def __init__(self):
         self.weights = []  #prediction coefficients
         self.tss_val = None  #total sum of squares
