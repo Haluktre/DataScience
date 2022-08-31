@@ -2,6 +2,7 @@
              
    ![555-1024x505](https://user-images.githubusercontent.com/44750494/187763548-9dbdbb0a-9cac-4499-a2ce-bcff816e08b7.png)
 
+
 A data science library for simple linear regression and multiple linear regression calculations that I developed for my own work.
 
 
