@@ -1,2 +1,1 @@
-
-![image](https://user-images.githubusercontent.com/44750494/182272006-ef8e120c-7fd9-4edd-aa7f-3f7125824a11.png)
+![Yeni Proje](https://user-images.githubusercontent.com/44750494/187761717-d71325ee-7cf0-434e-bf62-7de775320b52.png)
