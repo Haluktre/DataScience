@@ -221,15 +221,16 @@ def standard_deviation(dataset):
         total = total + (i - mf.mean(dataset))**2
 
     standard_dv = (total/(len(dataset)-1))**(1/2)
+    percent = standard_dv/mf.mean(dataset)*100
     
-    return standard_dv
+    return standard_dv, percent
 
     
-def z_score(dataset,x_value,standard_deviation):
+def z_score(dataset,x_value):
     if(type(dataset)!=list):
         dataset = dataset.tolist()
-        
-    Z_score = (x_value - mf.mean(dataset)) / standard_deviation
+
+    Z_score = (x_value - mf.mean(dataset)) / standard_deviation(dataset)
     
     return Z_score
 
