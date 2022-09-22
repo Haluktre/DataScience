@@ -12,7 +12,7 @@ Below is the simple linear regression formula ⬇
 
 # Test Code
 
-```
+```python
 import dataScience as ds
 import matplotlib.pyplot as plt
 
@@ -34,7 +34,7 @@ plt.plot(x, y, "ro", x, y_predicts, "-b")
 plt.show()
 ```
 ## Output
-```
+```python
 Finished fit!
 score: 0.9799999999999999 b0: 9.600000000000001 b1: 1.4
 ```
