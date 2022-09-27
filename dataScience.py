@@ -230,9 +230,10 @@ def z_score(dataset,x_value):
     if(type(dataset)!=list):
         dataset = dataset.tolist()
 
-    Z_score = (x_value - mf.mean(dataset)) / standard_deviation(dataset)
-    
-    return Z_score
+    standard_dv, _ = standard_deviation(dataset)
+    z = (x_value - mf.mean(dataset)) / standard_dv
+
+    return z
 
 
 def variance(dataset):
